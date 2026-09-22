@@ -6,7 +6,7 @@
     "first_name": "Demo",
     "last_name": "User",
     "phone": "+40 700 000 999",
-    "role": "adm",
+    "role": "Customer",
     "address": {
       "address_line": "Str. Exemplu 10",
       "city": "Cluj-Napoca",

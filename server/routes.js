@@ -1,5 +1,5 @@
 const express = require('express');
-const { createDb } = require('./db');
+const { createDb } = require('./db-factory');
 const { registerBookRoutes } = require('./books');
 const { registerOrderRoutes } = require('./orders');
 const { registerStoreRoutes } = require('./store');
