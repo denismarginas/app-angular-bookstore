@@ -4,12 +4,11 @@
   "scripts": {
     "ng": "ng",
     "start": "concurrently \"npm run api\" \"ng serve\"",
-    "api": "node api/server.js",
+    "api": "node server/dev-server.js",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:angular-bookstore1": "node dist/angular-bookstore1/server/server.mjs",
-    "seed:supabase": "node scripts/seed-supabase.js"
+    "serve:ssr:angular-bookstore1": "node dist/angular-bookstore1/server/server.mjs"
   },
   "private": true,
   "dependencies": {
@@ -23,8 +22,6 @@
     "@angular/platform-server": "^17.0.0",
     "@angular/router": "^17.0.0",
     "@angular/ssr": "^17.0.3",
-    "@supabase/supabase-js": "^2.45.0",
-    "dotenv": "^16.4.5",
     "express": "^4.18.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
