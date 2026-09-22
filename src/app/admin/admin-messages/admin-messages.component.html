@@ -1,0 +1,24 @@
+<h2>Messages</h2>
+
+@if (errorMessage) {
+<p class="admin-error">{{ errorMessage }}</p>
+}
+
+@if (messages.length === 0) {
+<p>There are no messages yet.</p>
+} @else {
+<div class="messages-list">
+  @for (message of messages; track message.id) {
+  <details class="message-item">
+    <summary>{{ message.subject || 'Subject' }} - {{ message.date | date:'medium' }}</summary>
+    <div class="message-body">
+      <p><strong>From:</strong> {{ message.first_name }} {{ message.last_name }}</p>
+      <p><strong>Email:</strong> {{ message.email }}</p>
+      <p><strong>Phone:</strong> {{ message.phone || '-' }}</p>
+      <p><strong>Order:</strong> {{ message.order_id || '-' }}</p>
+      <p class="message-text">{{ message.message }}</p>
+    </div>
+  </details>
+  }
+</div>
+}

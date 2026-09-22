@@ -16,6 +16,26 @@ First, install dependencies:
 npm install
 ```
 
+## Data source
+
+By default, with no `.env` file, the app stores everything in the local JSON files under `src/assets/demo-db` — no setup required, works right after `npm install`.
+
+To use the local demo database explicitly (for example if you also have a real database configured and want to make sure the app ignores it), create a `.env` file in the project root with:
+
+```
+DB_PROVIDER=local
+```
+
+To use a real Postgres database (Supabase) and Vercel Blob for images instead, copy `.env.template` to `.env` and fill in:
+
+```
+DB_PROVIDER=postgres
+POSTGRES_URL=...
+BLOB_READ_WRITE_TOKEN=...
+```
+
+`.env` is never committed (see `.gitignore`) and is only read locally by `npm run api` / `npm start`. It has no effect on Vercel, which reads its own environment variables from the project dashboard instead.
+
 ## Running the app
 
 ### Windows quick start

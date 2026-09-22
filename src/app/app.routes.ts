@@ -23,6 +23,7 @@ import { AdminProductsComponent } from './admin/admin-products/admin-products.co
 import { AdminBookFormComponent } from './admin/admin-book-form/admin-book-form.component';
 import { AdminUsersComponent } from './admin/admin-users/admin-users.component';
 import { AdminUserFormComponent } from './admin/admin-user-form/admin-user-form.component';
+import { AdminMessagesComponent } from './admin/admin-messages/admin-messages.component';
 import { adminGuard } from './admin/admin.guard';
 
 export const routes: Routes = [
@@ -64,6 +65,7 @@ export const routes: Routes = [
       { path: 'users', component: AdminUsersComponent },
       { path: 'users/new', component: AdminUserFormComponent },
       { path: 'users/:id/edit', component: AdminUserFormComponent },
+      { path: 'messages', component: AdminMessagesComponent },
     ],
   },
 ];

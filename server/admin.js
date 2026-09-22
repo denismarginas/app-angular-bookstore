@@ -488,6 +488,15 @@ function registerAdminRoutes(app, db) {
     res.json(book);
   }));
 
+  app.get('/api/admin/contact-mails', asyncHandler(async (req, res) => {
+    if (!(await requireAdmin(db, req, res))) return;
+
+    const mails = await db.getContactMails();
+    const sorted = [...mails].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+    res.json(sorted);
+  }));
+
   app.post('/api/admin/books/upload-image', asyncHandler(async (req, res) => {
     if (!(await requireAdmin(db, req, res))) return;
 

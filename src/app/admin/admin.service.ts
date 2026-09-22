@@ -5,6 +5,7 @@ import { User, UserRole } from '../account/user';
 import { Order, OrderAddress, OrderCustomer, OrderPayment, OrderShipping } from '../order/order';
 import { OrderStatus } from '../order/order-status';
 import { Book } from '../books/books';
+import { ContactMessage } from '../contact/contact';
 
 export interface AdminOrderPayload {
   status: OrderStatus;
@@ -92,5 +93,10 @@ export class AdminService {
       data,
       admin_id: adminId
     });
+  }
+
+  getContactMails(adminId: number): Observable<ContactMessage[]> {
+    const params = new HttpParams().set('admin_id', adminId);
+    return this.http.get<ContactMessage[]>('/api/admin/contact-mails', { params });
   }
 }
