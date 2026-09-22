@@ -11,7 +11,7 @@ const { registerAdminRoutes } = require('./admin');
 function registerApiRoutes(app, dbDir) {
   const db = createDb(dbDir);
 
-  app.use(express.json());
+  app.use(express.json({ limit: '15mb' }));
 
   registerBookRoutes(app, db);
   registerOrderRoutes(app, db);

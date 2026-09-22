@@ -1,4 +1,5 @@
 const { Pool, types } = require('pg');
+const { put, list } = require('@vercel/blob');
 
 types.setTypeParser(1082, value => value);
 
@@ -10,6 +11,37 @@ function toArray(value) {
   if (!value) return [];
   if (Array.isArray(value)) return value;
   return JSON.parse(value);
+}
+
+function isAbsoluteUrl(value) {
+  return /^https?:\/\//i.test(value);
+}
+
+function createBlobUrlResolver() {
+  let cache = null;
+
+  return async function resolveImage(value) {
+    if (!value || isAbsoluteUrl(value)) return value;
+
+    if (!process.env.BLOB_READ_WRITE_TOKEN) return value;
+
+    if (!cache) {
+      cache = list({ prefix: 'books/' })
+        .then(result => {
+          const map = new Map();
+
+          for (const blob of result.blobs) {
+            map.set(blob.pathname, blob.url);
+          }
+
+          return map;
+        })
+        .catch(() => new Map());
+    }
+
+    const map = await cache;
+    return map.get(value) || value;
+  };
 }
 
 function sanitizeConnectionString(connectionString) {
@@ -136,9 +168,18 @@ function createDb(options = {}) {
     idleTimeoutMillis: 10000
   });
 
+  const resolveImage = createBlobUrlResolver();
+
   async function getBooks() {
     const { rows } = await pool.query('SELECT * FROM books ORDER BY id');
-    return rows.map(mapBook);
+    const books = rows.map(mapBook);
+
+    await Promise.all(books.map(async book => {
+      book.feature_image = await resolveImage(book.feature_image);
+      book.images = await Promise.all(book.images.map(resolveImage));
+    }));
+
+    return books;
   }
 
   async function saveBooks(books) {
@@ -420,8 +461,6 @@ function createDb(options = {}) {
   }
 
   async function uploadBookImage({ filename, buffer, contentType }) {
-    const { put } = require('@vercel/blob');
-
     const blob = await put(`books/${filename}`, buffer, {
       access: 'public',
       contentType,

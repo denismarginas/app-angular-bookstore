@@ -8,7 +8,8 @@
     "build": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:angular-bookstore1": "node dist/angular-bookstore1/server/server.mjs"
+    "serve:ssr:angular-bookstore1": "node dist/angular-bookstore1/server/server.mjs",
+    "migrate:blob": "node --env-file=.env.migrate scripts/migrate-blob-to-public.js"
   },
   "private": true,
   "dependencies": {
