@@ -13,5 +13,6 @@ export class SelectableOptionComponent {
   @Input({ required: true }) value!: string;
   @Input({ required: true }) name!: string;
   @Input({ required: true }) description!: string;
+  @Input({ required: true }) groupName!: string;
   @Input() price: number | null = null;
 }
