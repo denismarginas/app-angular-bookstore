@@ -1,10 +1,44 @@
-# HelloWorldsPt1
+# BookStore
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.3.
+A minimalist Angular + Express bookstore demo.
 
-## Development server
+## Requirements
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Node.js v24.20.0
+- npm 9.6.2
+- Angular 17 (CLI version 17.0.3)
+
+## Install
+
+First, install dependencies:
+
+```
+npm install
+```
+
+## Running the app
+
+### Windows quick start
+
+Double-click `start.bat` (or run it from a terminal). It runs `npm start`, which starts the Express API and the Angular dev server together.
+
+### Manual start
+
+```
+npm start
+```
+
+This runs the API server and `ng serve` together. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+
+You can also run them separately:
+
+```
+ng serve
+```
+
+```
+npm run api
+```
 
 ## Code scaffolding
 
@@ -23,5 +57,7 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
 ## Further help
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.3.
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
