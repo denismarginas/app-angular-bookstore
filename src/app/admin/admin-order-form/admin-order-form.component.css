@@ -1,0 +1,132 @@
+.admin-form {
+  max-width: 720px;
+}
+
+.order-fields {
+  border: 1px solid var(--bs-color-highlight-secondary);
+  border-radius: 4px;
+  padding: 16px 20px 20px;
+  margin-bottom: 24px;
+}
+
+.order-fields legend {
+  font-weight: 600;
+  padding: 0 8px;
+}
+
+.field-row {
+  display: flex;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.field-row .form-field {
+  flex: 1;
+}
+
+.form-field {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--bs-color-secondary);
+}
+
+.form-field-label {
+  display: block;
+}
+
+.form-field input,
+.form-field select {
+  display: block;
+  width: 100%;
+  margin-top: 6px;
+  padding: 10px 12px;
+  border: 1px solid var(--bs-color-highlight-secondary);
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--bs-color-text);
+  background-color: #fff
+}
+
+.item-row {
+  align-items: flex-end;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--bs-color-highlight-secondary);
+}
+
+.item-row:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.item-line-total {
+  font-weight: 600;
+  white-space: nowrap;
+  padding-bottom: 10px;
+}
+
+.remove-item {
+  background: none;
+  color: var(--bs-color-secondary);
+  border: 1px solid var(--bs-color-highlight-secondary);
+  border-radius: 4px;
+  padding: 10px 16px;
+  height: fit-content;
+}
+
+.remove-item:hover {
+  background-color: var(--bs-color-highlight-secondary);
+  color: var(--bs-color-text);
+}
+
+.add-item {
+  margin-top: 16px;
+  padding: 10px 16px;
+  border: 1px solid var(--bs-color-highlight-secondary);
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.add-item:hover {
+  background-color: var(--bs-color-highlight-secondary);
+}
+
+.order-total-row {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 24px;
+}
+
+.admin-form-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.admin-form-actions button {
+  padding: 12px 24px;
+  font-weight: 600;
+  background-color: var(--bs-color-text);
+  color: var(--bs-color-highlight-primary);
+  border-radius: 4px;
+}
+
+.admin-form-actions button:disabled {
+  opacity: 0.6;
+}
+
+.admin-error {
+  margin-bottom: 16px;
+  color: #a4362b;
+}
+
+@media (max-width: 768px) {
+  .field-row {
+    flex-direction: column;
+  }
+}

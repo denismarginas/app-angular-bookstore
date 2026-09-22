@@ -1,0 +1,28 @@
+<h2>Your Orders</h2>
+
+@if (myOrders.length === 0) {
+<p>You have no orders yet.</p>
+} @else {
+<table class="orders-table">
+  <thead>
+    <tr>
+      <th>Order ID</th>
+      <th>Total</th>
+      <th>Email</th>
+      <th>Status</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (order of myOrders; track order.order_id) {
+    <tr>
+      <td>#{{ order.order_id }}</td>
+      <td>${{ order.order_total.toFixed(2) }}</td>
+      <td>{{ order.customer.email }}</td>
+      <td><span class="status-badge">{{ order.status }}</span></td>
+      <td><a [routerLink]="['/order', order.order_id]">Details</a></td>
+    </tr>
+    }
+  </tbody>
+</table>
+}

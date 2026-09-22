@@ -1,0 +1,47 @@
+@if (book) {
+<div class="section space-y-large">
+  <div class="product container">
+    <app-book-gallery-slider [images]="book.images" [alt]="book.title"></app-book-gallery-slider>
+
+    <div class="product-info">
+      <h1>{{ book.title }}</h1>
+      <p class="product-author">{{ book.author }}</p>
+
+      @if (book.sale_price) {
+      <p class="product-price">
+        <span class="price-sale">${{ book.sale_price }}</span>
+        <span class="price-original">${{ book.price }}</span>
+      </p>
+      } @else {
+      <p class="product-price">${{ book.price }}</p>
+      }
+
+      <div class="product-actions">
+        <div class="quantity-selector">
+          <button type="button" (click)="decrement()" [disabled]="isOutOfStock() || quantity <= 1" aria-label="Decrease quantity">&minus;</button>
+          <input type="number" min="1" [max]="maxQuantity" [value]="quantity" [disabled]="isOutOfStock()"
+            (change)="onQuantityChange($any($event.target).value)" />
+          <button type="button" (click)="increment()" [disabled]="isOutOfStock() || quantity >= maxQuantity" aria-label="Increase quantity">&plus;</button>
+        </div>
+
+        <button type="button" [disabled]="isOutOfStock()" (click)="addToCart()">
+          Add to Cart
+        </button>
+
+        <button type="button" class="buy-now" [disabled]="isOutOfStock()" (click)="buyNow()">
+          Buy Now
+        </button>
+      </div>
+
+      <p class="product-description">{{ book.description }}</p>
+    </div>
+  </div>
+</div>
+} @else if (notFound) {
+<div class="section space-y-large">
+  <div class="product-not-found container">
+    <p>We couldn't find that book.</p>
+    <a routerLink="/books">Browse Books</a>
+  </div>
+</div>
+}

@@ -1,0 +1,97 @@
+<h2>{{ isEdit ? 'Edit Product' : 'Add New Product' }}</h2>
+
+@if (errorMessage) {
+<p class="admin-error">{{ errorMessage }}</p>
+}
+
+<form class="admin-form" [formGroup]="form" (ngSubmit)="submit()">
+  <fieldset class="order-fields">
+    <legend>Details</legend>
+
+    <div class="field-row">
+      <app-form-field [group]="form" name="title" label="Title"></app-form-field>
+      <app-form-field [group]="form" name="author" label="Author"></app-form-field>
+    </div>
+
+    <app-form-field
+      [group]="form"
+      name="slug"
+      label="Slug (optional, auto-generated from title if left blank)"
+    ></app-form-field>
+
+    <div class="field-row">
+      <label class="form-field">
+        <span class="form-field-label">Price</span>
+        <input type="number" step="0.01" min="0" formControlName="price" />
+      </label>
+
+      <label class="form-field">
+        <span class="form-field-label">Sale Price (optional)</span>
+        <input type="number" step="0.01" min="0" formControlName="sale_price" />
+      </label>
+    </div>
+
+    <div class="field-row">
+      <app-form-field [group]="form" name="date_published" label="Date Published" type="date"></app-form-field>
+
+      <label class="form-field">
+        <span class="form-field-label">Quantity</span>
+        <input type="number" step="1" min="0" formControlName="quantity" />
+      </label>
+    </div>
+
+    <label class="in-stock-field">
+      <input type="checkbox" formControlName="in_stock" />
+      In Stock (overrides quantity: checked keeps it purchasable even at 0 quantity, unchecked blocks purchase
+      regardless of quantity)
+    </label>
+
+    <app-form-field [group]="form" name="description" label="Description" type="textarea"></app-form-field>
+  </fieldset>
+
+  <fieldset class="order-fields">
+    <legend>Feature Image</legend>
+
+    @if (form.controls.feature_image.value) {
+    <img [src]="displayPath(form.controls.feature_image.value)" alt="" class="image-preview" />
+    }
+
+    <input type="file" accept="image/*" (change)="onFeatureImageSelected($event)" />
+
+    @if (isUploadingFeature) {
+    <p class="upload-status">Uploading...</p>
+    }
+
+    @if (form.controls.feature_image.invalid && form.controls.feature_image.touched) {
+    <p class="admin-error">A feature image is required.</p>
+    }
+  </fieldset>
+
+  <fieldset class="order-fields">
+    <legend>Gallery Images</legend>
+
+    @if (images.length > 0) {
+    <div class="image-gallery">
+      @for (image of images; track image; let i = $index) {
+      <div class="image-gallery-item">
+        <img [src]="displayPath(image)" alt="" class="image-preview" />
+        <button type="button" (click)="removeImage(i)">Remove</button>
+      </div>
+      }
+    </div>
+    }
+
+    <input type="file" accept="image/*" (change)="onGalleryImageSelected($event)" />
+
+    @if (isUploadingImage) {
+    <p class="upload-status">Uploading...</p>
+    }
+  </fieldset>
+
+  <div class="admin-form-actions">
+    <button type="submit" [disabled]="isSubmitting">
+      {{ isSubmitting ? 'Saving...' : 'Save Product' }}
+    </button>
+    <a routerLink="/admin/products">Cancel</a>
+  </div>
+</form>

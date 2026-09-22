@@ -1,0 +1,229 @@
+[
+  {
+    "order_id": 101,
+    "status": "Pending",
+    "date": "2026-09-18",
+    "customer": {
+      "first_name": "Ion",
+      "last_name": "Vasile",
+      "email": "ion.vasile@example.com",
+      "phone": "+40 711 000 001"
+    },
+    "address": {
+      "address_line": "Str. Florilor 15",
+      "city": "Brasov",
+      "state": "Brasov",
+      "postal_code": "500010",
+      "country": "Romania"
+    },
+    "store": {
+      "name": "Book Store",
+      "address": "",
+      "cui": "1234345",
+      "email": "hello@bookstore.demo",
+      "phone": "+40 700 000 000"
+    },
+    "items": [
+      {
+        "id": 1,
+        "title": "Angular: Up and Running",
+        "quantity": 1,
+        "price": 39.99,
+        "total_price": 39.99
+      }
+    ],
+    "shipping": {
+      "id": "local_transport",
+      "name": "Local Transport",
+      "price": 10
+    },
+    "payment": {
+      "id": "card",
+      "name": "Pay with Card"
+    },
+    "order_total": 49.99
+  },
+  {
+    "order_id": 102,
+    "status": "Processing",
+    "date": "2026-09-19",
+    "customer": {
+      "first_name": "Ana",
+      "last_name": "Stoica",
+      "email": "ana.stoica@example.com",
+      "phone": "+40 722 000 002"
+    },
+    "address": {
+      "address_line": "Bd. Independentei 42",
+      "city": "Iasi",
+      "state": "Iasi",
+      "postal_code": "700100",
+      "country": "Romania"
+    },
+    "store": {
+      "name": "Book Store",
+      "address": "",
+      "cui": "1234345",
+      "email": "hello@bookstore.demo",
+      "phone": "+40 700 000 000"
+    },
+    "items": [
+      {
+        "id": 2,
+        "title": "TypeScript Programming",
+        "quantity": 2,
+        "price": 54.99,
+        "total_price": 109.98
+      }
+    ],
+    "shipping": {
+      "id": "local_transport",
+      "name": "Local Transport",
+      "price": 10
+    },
+    "payment": {
+      "id": "cash",
+      "name": "Pay with Cash"
+    },
+    "order_total": 119.98
+  },
+  {
+    "order_id": 103,
+    "status": "Shipped",
+    "date": "2026-09-20",
+    "customer": {
+      "first_name": "Mihai",
+      "last_name": "Georgescu",
+      "email": "mihai.georgescu@example.com",
+      "phone": "+40 733 000 003"
+    },
+    "address": {
+      "address_line": "Str. Victoriei 8",
+      "city": "Cluj-Napoca",
+      "state": "Cluj",
+      "postal_code": "400012",
+      "country": "Romania"
+    },
+    "store": {
+      "name": "Book Store",
+      "address": "",
+      "cui": "1234345",
+      "email": "hello@bookstore.demo",
+      "phone": "+40 700 000 000"
+    },
+    "items": [
+      {
+        "id": 3,
+        "title": "JavaScript: The Definitive Guide",
+        "quantity": 1,
+        "price": 59.99,
+        "total_price": 59.99
+      },
+      {
+        "id": 4,
+        "title": "CSS: The Definitive Guide",
+        "quantity": 1,
+        "price": 45.99,
+        "total_price": 45.99
+      }
+    ],
+    "shipping": {
+      "id": "local_transport",
+      "name": "Local Transport",
+      "price": 10
+    },
+    "payment": {
+      "id": "card",
+      "name": "Pay with Card"
+    },
+    "order_total": 115.98
+  },
+  {
+    "order_id": 104,
+    "status": "Completed",
+    "date": "2026-09-21",
+    "customer": {
+      "first_name": "Ioana",
+      "last_name": "Moldovan",
+      "email": "ioana.moldovan@example.com",
+      "phone": "+40 744 000 004"
+    },
+    "address": {
+      "address_line": "Splaiul Unirii 100",
+      "city": "Bucharest",
+      "state": "",
+      "postal_code": "040032",
+      "country": "Romania"
+    },
+    "store": {
+      "name": "Book Store",
+      "address": "",
+      "cui": "1234345",
+      "email": "hello@bookstore.demo",
+      "phone": "+40 700 000 000"
+    },
+    "items": [
+      {
+        "id": 5,
+        "title": "HTML & CSS: Design and Build Websites",
+        "quantity": 2,
+        "price": 29.99,
+        "total_price": 59.98
+      }
+    ],
+    "shipping": {
+      "id": "take_from_store",
+      "name": "Take from Store",
+      "price": 0
+    },
+    "payment": {
+      "id": "cash",
+      "name": "Pay with Cash"
+    },
+    "order_total": 59.98
+  },
+  {
+    "order_id": 105,
+    "status": "Cancelled",
+    "date": "2026-09-22",
+    "customer": {
+      "first_name": "Cristian",
+      "last_name": "Vlad",
+      "email": "cristian.vlad@example.com",
+      "phone": "+40 755 000 005"
+    },
+    "address": {
+      "address_line": "Str. Horea 3",
+      "city": "Timisoara",
+      "state": "Timis",
+      "postal_code": "300028",
+      "country": "Romania"
+    },
+    "store": {
+      "name": "Book Store",
+      "address": "",
+      "cui": "1234345",
+      "email": "hello@bookstore.demo",
+      "phone": "+40 700 000 000"
+    },
+    "items": [
+      {
+        "id": 6,
+        "title": "Node.js Design Patterns",
+        "quantity": 1,
+        "price": 59.99,
+        "total_price": 59.99
+      }
+    ],
+    "shipping": {
+      "id": "local_transport",
+      "name": "Local Transport",
+      "price": 10
+    },
+    "payment": {
+      "id": "card",
+      "name": "Pay with Card"
+    },
+    "order_total": 69.99
+  }
+]

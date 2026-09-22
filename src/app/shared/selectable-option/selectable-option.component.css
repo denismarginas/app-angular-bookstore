@@ -1,0 +1,43 @@
+.selectable-option {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border: 1px solid var(--bs-color-highlight-secondary);
+  border-radius: 4px;
+  padding: 14px 16px;
+  cursor: pointer;
+}
+
+.selectable-option + .selectable-option {
+  margin-top: 12px;
+}
+
+.selectable-option.is-selected {
+  border-color: var(--bs-color-secondary);
+  background-color: var(--bs-color-highlight-primary);
+}
+
+.selectable-option input[type='radio'] {
+  flex-shrink: 0;
+}
+
+.selectable-option-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.selectable-option-name {
+  font-weight: 600;
+}
+
+.selectable-option-description {
+  font-size: 13px;
+  color: var(--bs-color-secondary);
+}
+
+.selectable-option-price {
+  font-weight: 600;
+  white-space: nowrap;
+}

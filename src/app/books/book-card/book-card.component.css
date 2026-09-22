@@ -1,0 +1,40 @@
+.book-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.book-card .book-image {
+ background-color: #fff;
+ padding: 15px;
+}
+
+.book-card img {
+  width: 100%;
+  height: 300px;
+  aspect-ratio: 3 / 4;
+  object-fit: contain;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.book-card h3 {
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.book-author {
+  color: var(--bs-color-secondary);
+  font-size: 14px;
+}
+
+.book-price {
+  font-weight: 600;
+}
+
+.price-original {
+  margin-left: 8px;
+  color: var(--bs-color-secondary);
+  font-weight: 400;
+  text-decoration: line-through;
+}
+ 

@@ -1,0 +1,8 @@
+.store-fields {
+  background-color: var(--bs-color-highlight-primary);
+  padding: 20px;
+}
+
+.store-name {
+  font-weight: 600;
+}

@@ -1,0 +1,13 @@
+[
+  {
+    "id": 2,
+    "date": "2026-09-22T13:15:42.031Z",
+    "subject": "",
+    "first_name": "Test",
+    "last_name": "User",
+    "phone": "",
+    "email": "test.user@example.com",
+    "order_id": "",
+    "message": "This is a diagnostic test message."
+  }
+]

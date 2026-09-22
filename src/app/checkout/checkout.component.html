@@ -1,0 +1,49 @@
+<app-hero title="Checkout"></app-hero>
+
+<form class="section space-y-large" [formGroup]="checkoutForm" (ngSubmit)="placeOrder()">
+  <div class="checkout container">
+    <div class="checkout-fields">
+      <app-order-user-fields [formGroup]="checkoutForm.controls.user"></app-order-user-fields>
+      <app-order-address-fields [formGroup]="checkoutForm.controls.address"></app-order-address-fields>
+      <app-shipping [control]="checkoutForm.controls.shipping_method"></app-shipping>
+      <app-payments [control]="checkoutForm.controls.payment_method"></app-payments>
+      <app-order-store-fields></app-order-store-fields>
+    </div>
+
+    <div class="checkout-summary">
+      <h2>Order Summary</h2>
+
+      @for (item of cartService.items(); track item.id) {
+      <div class="checkout-summary-item">
+        <p>{{ item.title }} &times; {{ item.quantity }}</p>
+        <p>${{ (itemPrice(item.price, item.sale_price) * item.quantity).toFixed(2) }}</p>
+      </div>
+      }
+
+      <div class="checkout-summary-item">
+        <p>Subtotal</p>
+        <p>${{ cartService.subtotal().toFixed(2) }}</p>
+      </div>
+
+      <div class="checkout-summary-item">
+        <p>Shipping</p>
+        <p>${{ shippingPrice().toFixed(2) }}</p>
+      </div>
+
+      <div class="checkout-summary-total">
+        <p>Total</p>
+        <p>${{ orderTotal().toFixed(2) }}</p>
+      </div>
+
+      @if (errorMessage) {
+      <p class="checkout-error">{{ errorMessage }}</p>
+      }
+
+      <button type="submit" [disabled]="isSubmitting">
+        {{ isSubmitting ? 'Placing Order...' : 'Place Order' }}
+      </button>
+
+      <a routerLink="/cart" class="checkout-back">Back to Cart</a>
+    </div>
+  </div>
+</form>

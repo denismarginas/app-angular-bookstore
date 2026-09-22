@@ -1,0 +1,27 @@
+.order-fields {
+  border: 1px solid var(--bs-color-highlight-secondary);
+  border-radius: 4px;
+  padding: 16px 20px 20px;
+  margin-bottom: 24px;
+}
+
+.order-fields legend {
+  font-weight: 600;
+  padding: 0 8px;
+}
+
+.field-row {
+  display: flex;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.field-row app-form-field {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .field-row {
+    flex-direction: column;
+  }
+}

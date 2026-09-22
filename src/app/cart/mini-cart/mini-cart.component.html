@@ -1,0 +1,36 @@
+<div class="mini-cart">
+  <button type="button" class="cart-toggle" (click)="toggle()" [attr.aria-expanded]="isOpen"
+    aria-label="Cart">
+    <img src="assets/svg/cart.svg" alt="" />
+    @if (cartService.itemCount() > 0) {
+    <span class="cart-count">{{ cartService.itemCount() }}</span>
+    }
+  </button>
+
+  @if (isOpen) {
+  <div class="mini-cart-panel">
+    @if (cartService.items().length === 0) {
+    <p class="mini-cart-empty">Your cart is empty</p>
+    } @else {
+    <ul class="mini-cart-list">
+      @for (item of cartService.items(); track item.id) {
+      <li class="mini-cart-item">
+        <img [src]="item.feature_image.replace('src/', '')" [alt]="item.title" />
+        <div class="mini-cart-item-info">
+          <p class="mini-cart-item-title">{{ item.title }}</p>
+          <p class="mini-cart-item-meta">{{ item.quantity }} &times; ${{ itemPrice(item.price, item.sale_price) }}</p>
+        </div>
+      </li>
+      }
+    </ul>
+
+    <p class="mini-cart-subtotal">Subtotal: ${{ cartService.subtotal().toFixed(2) }}</p>
+
+    <div class="mini-cart-actions">
+      <a routerLink="/cart" (click)="close()">View Cart</a>
+      <a routerLink="/checkout" class="mini-cart-checkout" (click)="close()">Checkout</a>
+    </div>
+    }
+  </div>
+  }
+</div>

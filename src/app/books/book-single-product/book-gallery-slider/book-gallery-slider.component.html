@@ -1,0 +1,29 @@
+<div class="gallery-main">
+  @if (images.length > 1) {
+  <button type="button" class="gallery-arrow gallery-arrow--prev" (click)="prev()" aria-label="Previous image">
+    <img src="assets/svg/left-chevron.svg" alt="" />
+  </button>
+  }
+
+  <img [src]="images[activeIndex].replace('src/', '')" [alt]="alt" class="gallery-image" />
+
+  @if (images.length > 1) {
+  <button type="button" class="gallery-arrow gallery-arrow--next" (click)="next()" aria-label="Next image">
+    <img src="assets/svg/right-chevron.svg" alt="" />
+  </button>
+  }
+</div>
+
+@if (images.length > 1) {
+<div class="gallery-dots">
+  @for (image of images; track image; let i = $index) {
+  <button
+    type="button"
+    class="gallery-dot"
+    [class.is-active]="i === activeIndex"
+    (click)="goTo(i)"
+    [attr.aria-label]="'Go to image ' + (i + 1)"
+  ></button>
+  }
+</div>
+}

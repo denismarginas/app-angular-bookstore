@@ -1,0 +1,11 @@
+<fieldset class="order-fields options-fields">
+  <legend>Payment Method</legend>
+
+  <div class="options-list">
+    <app-pay-with-cash [control]="control"></app-pay-with-cash>
+  </div>
+
+  @if (control.invalid && control.touched) {
+  <p class="options-error">Please select a payment method.</p>
+  }
+</fieldset>

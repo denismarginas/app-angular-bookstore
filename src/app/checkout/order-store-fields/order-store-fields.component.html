@@ -1,0 +1,13 @@
+@if (store) {
+<fieldset class="order-fields store-fields">
+  <legend>Sold By</legend>
+
+  <p class="store-name">{{ store.name }}</p>
+  @if (store.address) {
+  <p>{{ store.address }}</p>
+  }
+  <p>CUI {{ store.cui }}</p>
+  <p>{{ store.email }}</p>
+  <p>{{ store.phone }}</p>
+</fieldset>
+}

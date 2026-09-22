@@ -1,0 +1,12 @@
+<fieldset class="order-fields options-fields">
+  <legend>Shipping Method</legend>
+
+  <div class="options-list">
+    <app-local-transport [control]="control"></app-local-transport>
+    <app-take-from-store [control]="control"></app-take-from-store>
+  </div>
+
+  @if (control.invalid && control.touched) {
+  <p class="options-error">Please select a shipping method.</p>
+  }
+</fieldset>

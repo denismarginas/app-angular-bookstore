@@ -1,0 +1,20 @@
+<article class="book-card">
+    <a [routerLink]="['/books', bookLink]" class="book-image"><img [src]="book.feature_image.replace('src/', '')"
+            [alt]="book.title" /></a>
+    <a [routerLink]="['/books', bookLink]">
+        <h3>{{ book.title }}</h3>
+    </a>
+
+    <p class="book-author">{{ book.author }}</p>
+    @if (book.sale_price) {
+    <p class="book-price">
+        <span class="price-sale">${{ book.sale_price }}</span>
+        <span class="price-original">${{ book.price }}</span>
+    </p>
+    } @else {
+    <p class="book-price">${{ book.price }}</p>
+    }
+    <button [disabled]="isOutOfStock()" (click)="onAddToCart($event)">
+        Add to Cart
+    </button>
+</article>

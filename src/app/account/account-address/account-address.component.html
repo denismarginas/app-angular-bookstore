@@ -1,0 +1,23 @@
+<h2>Your Address</h2>
+
+<form class="account-form" [formGroup]="addressForm" (ngSubmit)="save()">
+  <app-form-field [group]="addressForm" name="address_line" label="Address"></app-form-field>
+
+  <div class="field-row">
+    <app-form-field [group]="addressForm" name="city" label="City"></app-form-field>
+    <app-form-field [group]="addressForm" name="state" label="State / County"></app-form-field>
+  </div>
+
+  <div class="field-row">
+    <app-form-field [group]="addressForm" name="postal_code" label="Postal Code"></app-form-field>
+    <app-form-field [group]="addressForm" name="country" label="Country"></app-form-field>
+  </div>
+
+  @if (successMessage) {
+  <p class="account-success">{{ successMessage }}</p>
+  }
+
+  <button type="submit" [disabled]="isSubmitting">
+    {{ isSubmitting ? 'Saving...' : 'Save Changes' }}
+  </button>
+</form>

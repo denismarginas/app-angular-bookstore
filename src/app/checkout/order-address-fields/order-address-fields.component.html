@@ -1,0 +1,15 @@
+<fieldset class="order-fields" [formGroup]="formGroup">
+  <legend>Shipping Address</legend>
+
+  <app-form-field [group]="formGroup" name="address_line" label="Address"></app-form-field>
+
+  <div class="field-row">
+    <app-form-field [group]="formGroup" name="city" label="City"></app-form-field>
+    <app-form-field [group]="formGroup" name="state" label="State / County"></app-form-field>
+  </div>
+
+  <div class="field-row">
+    <app-form-field [group]="formGroup" name="postal_code" label="Postal Code"></app-form-field>
+    <app-form-field [group]="formGroup" name="country" label="Country"></app-form-field>
+  </div>
+</fieldset>

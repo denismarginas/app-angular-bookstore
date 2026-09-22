@@ -1,0 +1,33 @@
+<div class="admin-list-header">
+  <h2>All Users</h2>
+  <a routerLink="new" class="admin-add-link">Add New User</a>
+</div>
+
+@if (errorMessage) {
+<p class="admin-error">{{ errorMessage }}</p>
+}
+
+@if (users.length === 0) {
+<p>No users found.</p>
+} @else {
+<table class="orders-table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Email</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (user of users; track user.id; let i = $index) {
+    <tr>
+      <td>{{ i + 1 }}</td>
+      <td>{{ user.email }}</td>
+      <td class="admin-row-actions">
+        <a [routerLink]="[user.id, 'edit']">Edit</a>
+      </td>
+    </tr>
+    }
+  </tbody>
+</table>
+}

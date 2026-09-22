@@ -1,0 +1,28 @@
+.auth {
+  max-width: 420px;
+}
+
+.auth-form app-form-field {
+  display: block;
+  margin-top: 16px;
+}
+
+.auth-form app-form-field:first-child {
+  margin-top: 0;
+}
+
+.auth-form button {
+  width: 100%;
+  margin-top: 24px;
+}
+
+.auth-error {
+  margin-top: 16px;
+  color: #a4362b;
+}
+
+.auth-switch {
+  margin-top: 20px;
+  font-size: 14px;
+  color: var(--bs-color-secondary);
+}

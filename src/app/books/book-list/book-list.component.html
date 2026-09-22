@@ -1,0 +1,5 @@
+<div class="book-grid container">
+  @for (book of visibleBooks; track book.id) {
+  <app-book-card [book]="book"></app-book-card>
+  }
+</div>

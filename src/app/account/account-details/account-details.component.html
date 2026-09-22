@@ -1,0 +1,20 @@
+<h2>Your Details</h2>
+
+<form class="account-form" [formGroup]="detailsForm" (ngSubmit)="save()">
+  <p class="account-email">{{ authService.currentUser()?.email }}</p>
+
+  <div class="field-row">
+    <app-form-field [group]="detailsForm" name="first_name" label="First Name"></app-form-field>
+    <app-form-field [group]="detailsForm" name="last_name" label="Last Name"></app-form-field>
+  </div>
+
+  <app-form-field [group]="detailsForm" name="phone" label="Phone" type="tel"></app-form-field>
+
+  @if (successMessage) {
+  <p class="account-success">{{ successMessage }}</p>
+  }
+
+  <button type="submit" [disabled]="isSubmitting">
+    {{ isSubmitting ? 'Saving...' : 'Save Changes' }}
+  </button>
+</form>

@@ -1,0 +1,18 @@
+@if (page) {
+<app-hero [title]="page.title"></app-hero>
+
+<div class="section space-y-large">
+  <div class="page container">
+    <p class="page-content">{{ page.content }}</p>
+  </div>
+</div>
+} @else if (notFound) {
+<app-hero title="Page Not Found"></app-hero>
+
+<div class="section space-y-large">
+  <div class="page-not-found container">
+    <p>We couldn't find that page.</p>
+    <a routerLink="/">Back to Home</a>
+  </div>
+</div>
+}

@@ -1,0 +1,52 @@
+.account {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.account-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.account-nav a,
+.account-nav button {
+  text-align: left;
+  padding: 10px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.account-nav a {
+  color: var(--bs-color-text);
+}
+
+.account-nav a.is-active {
+  background-color: var(--bs-color-highlight-secondary);
+}
+
+.account-nav button {
+  background: none;
+  color: var(--bs-color-secondary);
+  border: 1px solid var(--bs-color-highlight-secondary);
+  margin-top: 12px;
+}
+
+.account-nav button:hover:not(:disabled) {
+  background-color: var(--bs-color-highlight-secondary);
+  color: var(--bs-color-text);
+}
+
+@media (max-width: 768px) {
+  .account {
+    grid-template-columns: 1fr;
+  }
+
+  .account-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}

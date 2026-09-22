@@ -1,0 +1,8 @@
+<label class="form-field" [formGroup]="group">
+  <span class="form-field-label">{{ label }}</span>
+  @if (type === 'textarea') {
+  <textarea [formControlName]="name" rows="6"></textarea>
+  } @else {
+  <input [type]="type" [formControlName]="name" />
+  }
+</label>

@@ -1,0 +1,37 @@
+.account-form {
+  max-width: 480px;
+  margin-top: 20px;
+}
+
+.field-row {
+  display: flex;
+  gap: 16px;
+}
+
+.field-row app-form-field {
+  flex: 1;
+}
+
+.account-form app-form-field {
+  display: block;
+  margin-top: 16px;
+}
+
+.account-form > app-form-field:first-child {
+  margin-top: 0;
+}
+
+.account-form button {
+  margin-top: 24px;
+}
+
+.account-success {
+  margin-top: 16px;
+  color: var(--bs-color-primary);
+}
+
+@media (max-width: 768px) {
+  .field-row {
+    flex-direction: column;
+  }
+}

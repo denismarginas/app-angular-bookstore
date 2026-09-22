@@ -1,0 +1,48 @@
+.admin-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.admin-add-link {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px 16px;
+  border: 1px solid var(--bs-color-highlight-secondary);
+  border-radius: 4px;
+  color: var(--bs-color-text);
+}
+
+.admin-add-link:hover {
+  background-color: var(--bs-color-highlight-secondary);
+}
+
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.orders-table th,
+.orders-table td {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid var(--bs-color-highlight-secondary);
+  font-size: 14px;
+}
+
+.admin-row-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.admin-row-actions a {
+  font-weight: 600;
+}
+
+.admin-error {
+  margin-top: 16px;
+  color: #a4362b;
+}

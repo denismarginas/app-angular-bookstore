@@ -1,0 +1,7 @@
+<h2>Welcome back, {{ authService.currentUser()?.first_name }}!</h2>
+
+<div class="dashboard-links">
+  <a routerLink="/account/orders">View Your Orders</a>
+  <a routerLink="/account/details">Edit Your Details</a>
+  <a routerLink="/account/address">Edit Your Address</a>
+</div>

@@ -1,0 +1,15 @@
+.dashboard-links {
+  display: flex;
+  flex-direction: row;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.dashboard-links a {
+  display: inline-block;
+  padding: 12px 16px;
+  border: 1px solid var(--bs-color-highlight-secondary);
+  border-radius: 4px;
+  font-weight: 600;
+  width: fit-content;
+}

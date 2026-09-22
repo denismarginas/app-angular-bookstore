@@ -1,0 +1,104 @@
+[
+  {
+    "id": 1,
+    "title": "Angular: Up and Running",
+    "slug": "angular-up-and-running",
+    "author": "Brad Green, Shyam Seshadri",
+    "price": 49.99,
+    "sale_price": 39.99,
+    "date_published": "2021-05-15",
+    "quantity": 110,
+    "in_stock": true,
+    "description": "A comprehensive guide to getting started with Angular, building fast and scalable web applications[cite: 1]. Authored by industry experts Brad Green and Shyam Seshadri[cite: 1], this book was published on 2021-05-15[cite: 1] and is currently available at a regular price of 49.99, with a discounted sale price of 39.99[cite: 1]. With a robust inventory quantity of 120 copies in stock[cite: 1], it serves as an indispensable resource for web developers aiming to master the Angular framework from the ground up. Angular remains one of the most powerful and structured platforms for developing modern, dynamic, single-page applications and large-scale enterprise solutions. Throughout the chapters, the authors break down complex architectural concepts into digestible modules, covering essential topics such as component-based design, data binding, directives, pipes, dependency injection, and reactive programming using RxJS. Readers are guided step-by-step through setting up a development environment, configuring routing and navigation, and implementing robust form handling and validation techniques. Additionally, the book places a strong emphasis on testing methodologies, debugging practices, and performance optimization strategies to ensure that applications remain snappy and maintainable as they scale. Whether you are transitioning from older frontend frameworks or embarking on your first major enterprise project, this definitive guide provides the practical insights, code snippets, and structural patterns necessary to build resilient web applications that stand the test of time and deliver exceptional user experiences across various devices and screen sizes.",
+    "feature_image": "src/assets/img/books/angular-01.webp",
+    "images": [
+      "src/assets/img/books/angular-01.webp",
+      "src/assets/img/books/angular-02.webp"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "TypeScript Programming",
+    "slug": "typescript-programming",
+    "author": "Boris Cherny",
+    "price": 54.99,
+    "sale_price": null,
+    "date_published": "2019-04-25",
+    "quantity": 84,
+    "in_stock": true,
+    "description": "Deep dive into TypeScript, covering type systems, design patterns, and enterprise-grade architecture[cite: 1]. Written by acclaimed author Boris Cherny[cite: 1], this comprehensive volume was published on 2019-04-25[cite: 1] and is offered at a standard price of 54.99 with no current sale price[cite: 1]. With 85 units currently available in inventory[cite: 1], this book is tailored for developers seeking to harness the full power of static typing in JavaScript-based environments. TypeScript has rapidly become an industry standard for building robust, maintainable, and error-free applications by catching bugs at compile-time rather than runtime. This deep dive systematically explores the nuances of TypeScript's advanced type system, including generics, conditional types, mapped types, and type guards, enabling developers to model complex business domains with absolute precision. Beyond basic syntax, the book explores proven design patterns, modular code organization, and strategies for migrating existing large-scale JavaScript codebases to TypeScript smoothly. Readers will also learn how to integrate TypeScript with popular build tools, configure compiler options for strict type-checking, and design scalable architectures suited for enterprise-grade applications. Rich with code examples, architectural best practices, and expert tips, this book equips developers with the analytical tools and practical knowledge needed to write cleaner, safer, and more reliable code that scales effortlessly alongside growing engineering teams and complex project requirements.",
+    "feature_image": "src/assets/img/books/ts-01.webp",
+    "images": [
+      "src/assets/img/books/ts-01.webp",
+      "src/assets/img/books/ts-02.webp"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "JavaScript: The Definitive Guide",
+    "slug": "javascript-the-definitive-guide",
+    "author": "David Flanagan",
+    "price": 69.99,
+    "sale_price": 59.99,
+    "date_published": "2020-06-10",
+    "quantity": 200,
+    "in_stock": true,
+    "description": "The quintessential guide for JavaScript developers, thoroughly updated for modern ES6+ features[cite: 1]. Crafted by renowned author David Flanagan[cite: 1], this monumental publication hit the shelves on 2020-06-10[cite: 1] and is available for 69.99, with a special sale price of 59.99[cite: 1]. Boasting a high stock quantity of 200 copies[cite: 1], it remains the ultimate reference manual for anyone working with the world's most ubiquitous programming language. JavaScript powers the interactive core of the modern web, and this thorough guide covers everything from foundational syntax to advanced asynchronous programming paradigms. Readers will find exhaustive explanations of closures, prototypes, classes, modules, the Document Object Model (DOM), event handling, and modern ES6+ features such as arrow functions, promises, and async/await syntax. The author provides clear, production-ready code examples that demonstrate how to write efficient, elegant, and secure client-side and server-side code. Furthermore, the book addresses crucial concepts like memory management, security considerations, and cross-browser compatibility, ensuring that developers can build robust web applications that perform reliably across diverse environments. Whether you are a beginner looking to understand the language's core mechanics or an experienced programmer seeking a reliable desktop reference for complex language features, this definitive guide provides the depth, accuracy, and clarity required to master JavaScript completely.",
+    "feature_image": "src/assets/img/books/js-01.webp",
+    "images": [
+      "src/assets/img/books/js-01.webp",
+      "src/assets/img/books/js-02.webp"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "CSS: The Definitive Guide",
+    "slug": "css-the-definitive-guide",
+    "author": "Eric A. Meyer",
+    "price": 45.99,
+    "sale_price": null,
+    "date_published": "2017-11-20",
+    "quantity": 95,
+    "in_stock": true,
+    "description": "Master visual formatting, cascading, grid systems, and flexible layouts with CSS[cite: 1]. Written by CSS authority Eric A. Meyer[cite: 1], this comprehensive volume was published on 2017-11-20[cite: 1] and is priced at 45.99 without any active sale discounts[cite: 1]. With an inventory level of 95 available copies[cite: 1], it acts as an essential manual for web designers and developers striving to create visually stunning and responsive user interfaces. Cascading Style Sheets form the backbone of web presentation, and this guide provides an exhaustive look into how styles cascade, inherit, and apply to document elements. Readers will explore deep dives into visual formatting models, box models, positioning schemes, colors, backgrounds, and typography. Special focus is given to modern layout modules like CSS Flexbox and CSS Grid, which revolutionize how complex multi-column layouts and adaptive designs are structured across desktop and mobile screens. The text also covers media queries, transitions, transforms, and animations, enabling developers to build engaging, interactive visual experiences without relying on heavy external libraries. Supported by clear diagrams, practical layout recipes, and expert troubleshooting advice, this book equips readers with the deep foundational understanding and advanced techniques needed to craft professional, pixel-perfect, and highly responsive web pages.",
+    "feature_image": "src/assets/img/books/css-01.webp",
+    "images": [
+      "src/assets/img/books/css-01.webp",
+      "src/assets/img/books/css-02.webp"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "HTML & CSS: Design and Build Websites",
+    "slug": "html-css-design-and-build-websites",
+    "author": "Jon Duckett",
+    "price": 39.99,
+    "sale_price": 29.99,
+    "date_published": "2011-11-08",
+    "quantity": 150,
+    "in_stock": true,
+    "description": "A beautifully designed, full-color introduction to learning HTML and CSS from scratch[cite: 1]. Created by renowned author and designer Jon Duckett[cite: 1], this visually striking book was published on 2011-11-08[cite: 1] and is offered at a regular price of 39.99, discounted to 29.99 on sale[cite: 1]. With 150 units currently stocked in inventory[cite: 1], it remains a beloved favorite for beginners stepping into the world of web design and development. Unlike traditional dense technical manuals, this book utilizes a highly visual, gorgeously formatted layout that makes learning markup and styling intuitive, engaging, and enjoyable. Readers are guided through the core concepts of structuring web pages with semantic HTML elements—such as headings, paragraphs, lists, tables, and forms—before moving on to styling those elements using CSS properties for color, layout, typography, and images. The book also introduces foundational principles of user experience design, website planning, and preparing assets for the web. Practical examples and step-by-step walkthroughs ensure that even absolute beginners can grasp how to code, style, and publish their very own custom websites. Whether you are an aspiring designer, a content creator, or a professional looking to add fundamental web literacy to your skillset, this book provides an accessible, friendly, and comprehensive entry point into front-end development.",
+    "feature_image": "src/assets/img/books/html-01.webp",
+    "images": [
+      "src/assets/img/books/html-01.webp",
+      "src/assets/img/books/html-02.webp"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Node.js Design Patterns",
+    "slug": "nodejs-design-patterns",
+    "author": "Mario Casciaro, Luciano Mammino",
+    "price": 59.99,
+    "sale_price": null,
+    "date_published": "2020-07-24",
+    "quantity": 0,
+    "in_stock": false,
+    "description": "Learn proven architectural patterns and best practices for building scalable production apps with Node.js[cite: 1]. Authored by Mario Casciaro and Luciano Mammino[cite: 1], this expert-level publication was released on 2020-07-24[cite: 1] and carries a price tag of 59.99 with no active sale price[cite: 1]. With an available stock quantity of 60 copies[cite: 1], this book is specifically engineered for backend developers looking to elevate their Node.js applications to professional enterprise standards. Node.js has revolutionized server-side development with its asynchronous, event-driven architecture, but harnessing its full potential requires understanding sophisticated design patterns and architectural best practices. This comprehensive guide walks readers through asynchronous control flow patterns, callback management, event emitters, streams, and modularization techniques. Furthermore, it explores advanced enterprise paradigms including microservices architecture, messaging patterns, scalability strategies, and performance optimization for production environments. Code examples are clear, practical, and grounded in real-world engineering challenges, helping developers avoid common pitfalls such as callback hell and memory leaks. By mastering the patterns outlined in this book, software engineers will gain the structural expertise required to design, develop, test, and maintain robust, high-performance, and resilient backend services capable of handling massive user loads and complex enterprise workloads.",
+    "feature_image": "src/assets/img/books/nodejs-01.webp",
+    "images": [
+      "src/assets/img/books/nodejs-01.webp",
+      "src/assets/img/books/nodejs-02.webp"
+    ]
+  }
+]

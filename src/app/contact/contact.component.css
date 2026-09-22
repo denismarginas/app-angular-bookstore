@@ -1,0 +1,36 @@
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.field-row {
+  display: flex;
+  gap: 16px;
+}
+
+.field-row app-form-field {
+  flex: 1;
+}
+
+.contact-form button {
+  align-self: flex-start;
+  margin-top: 8px;
+}
+
+.contact-error {
+  color: #a4362b;
+}
+
+.contact-success {
+  background-color: var(--bs-color-highlight-primary);
+  border-radius: 4px;
+  padding: 24px;
+  max-width: 640px;
+}
+
+@media (max-width: 768px) {
+  .field-row {
+    flex-direction: column;
+  }
+}

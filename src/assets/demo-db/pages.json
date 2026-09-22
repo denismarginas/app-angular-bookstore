@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "title": "Terms and Conditions",
+    "slug": "terms-and-conditions",
+    "content": "Welcome to Book Store. By accessing our website and purchasing our products, you agree to comply with and be bound by the following terms and conditions. Please read them carefully.\n\n1. Introduction\nThis website is operated by Book Store. Throughout the site, the terms 'we', 'us' and 'our' refer to Book Store. Our business details are as follows:\n- CUI: 1234345\n- Email: hello@bookstore.demo\n- Phone: +40 700 000 000\n- Address: Str. Exemplu nr. 123, Sector 1, Bucharest, Romania\n\n2. Use of the Website\nBy using our site, you confirm that you are at least 18 years of age or accessing the site under the supervision of a parent or legal guardian. You agree not to use our products or services for any illegal or unauthorized purpose.\n\n3. Products and Pricing\nAll descriptions of books, pricing, and availability are subject to change at any time without notice. We reserve the right to discontinue any product at any time.\n\n4. Limitation of Liability\nBook Store shall not be liable for any indirect, incidental, or consequential damages arising from the use of our website or the purchase of any books."
+  },
+  {
+    "id": 2,
+    "title": "Return and Shipping",
+    "slug": "return-and-shipping",
+    "content": "Thank you for shopping at Book Store! Here is everything you need to know about our shipping and return policies.\n\nShipping Information:\n- Processing Time: Orders are typically processed within 1-2 business days.\n- Delivery Time: Standard delivery within Bucharest and Romania takes between 2-4 business days.\n- Shipping Fees: Calculated at checkout based on your delivery address.\n\nReturn Policy:\n- Eligibility: You have 14 calendar days to return an item from the date you received it.\n- Condition: To be eligible for a return, your book must be unused and in the same condition that you received it, in its original packaging.\n- Refunds: Once we receive your item, we will inspect it and notify you on the status of your refund.\n\nContact Us:\nIf you have any questions on how to return your item to us, contact us at hello@bookstore.demo or call +40 700 000 000."
+  }
+]

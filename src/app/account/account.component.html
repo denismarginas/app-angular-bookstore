@@ -1,0 +1,17 @@
+<app-hero title="My Account"></app-hero>
+
+<div class="section space-y-large">
+  <div class="account container">
+    <nav class="account-nav">
+      <a routerLink="dashboard" routerLinkActive="is-active">Dashboard</a>
+      <a routerLink="orders" routerLinkActive="is-active">Orders</a>
+      <a routerLink="details" routerLinkActive="is-active">Your Details</a>
+      <a routerLink="address" routerLinkActive="is-active">Your Address</a>
+      <button type="button" (click)="logout()">Logout</button>
+    </nav>
+
+    <div class="account-content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

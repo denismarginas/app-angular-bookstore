@@ -1,0 +1,46 @@
+<h2>{{ isEdit ? 'Edit User' : 'Add New User' }}</h2>
+
+@if (errorMessage) {
+<p class="admin-error">{{ errorMessage }}</p>
+}
+
+<form class="admin-form" [formGroup]="form" (ngSubmit)="submit()">
+  <fieldset class="order-fields">
+    <legend>Account</legend>
+
+    <div class="field-row">
+      <app-form-field [group]="form" name="email" label="Email" type="email"></app-form-field>
+      <app-form-field
+        [group]="form"
+        name="password"
+        [label]="isEdit ? 'Password (leave blank to keep current)' : 'Password'"
+        type="password"
+      ></app-form-field>
+    </div>
+
+    <div class="field-row">
+      <app-form-field [group]="form" name="first_name" label="First Name"></app-form-field>
+      <app-form-field [group]="form" name="last_name" label="Last Name"></app-form-field>
+    </div>
+
+    <app-form-field [group]="form" name="phone" label="Phone" type="tel"></app-form-field>
+
+    <label class="form-field">
+      <span class="form-field-label">Role</span>
+      <select formControlName="role">
+        @for (role of roles; track role) {
+        <option [ngValue]="role">{{ role }}</option>
+        }
+      </select>
+    </label>
+  </fieldset>
+
+  <app-order-address-fields [formGroup]="$any(form.get('address'))"></app-order-address-fields>
+
+  <div class="admin-form-actions">
+    <button type="submit" [disabled]="isSubmitting">
+      {{ isSubmitting ? 'Saving...' : 'Save User' }}
+    </button>
+    <a routerLink="/admin/users">Cancel</a>
+  </div>
+</form>

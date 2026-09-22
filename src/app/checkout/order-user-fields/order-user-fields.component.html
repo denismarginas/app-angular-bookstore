@@ -1,0 +1,13 @@
+<fieldset class="order-fields" [formGroup]="formGroup">
+  <legend>Your Details</legend>
+
+  <div class="field-row">
+    <app-form-field [group]="formGroup" name="first_name" label="First Name"></app-form-field>
+    <app-form-field [group]="formGroup" name="last_name" label="Last Name"></app-form-field>
+  </div>
+
+  <div class="field-row">
+    <app-form-field [group]="formGroup" name="email" label="Email" type="email"></app-form-field>
+    <app-form-field [group]="formGroup" name="phone" label="Phone" type="tel"></app-form-field>
+  </div>
+</fieldset>

@@ -1,0 +1,41 @@
+<app-hero title="Your Cart"></app-hero>
+
+<div class="section space-y-large">
+  <div class="cart container">
+    @if (cartService.items().length === 0) {
+    <div class="cart-empty">
+      <p>Your cart is empty.</p>
+      <a routerLink="/books">Browse Books</a>
+    </div>
+    } @else {
+    <div class="cart-items">
+      @for (item of cartService.items(); track item.id) {
+      <div class="cart-item">
+        <img [src]="item.feature_image.replace('src/', '')" [alt]="item.title" />
+
+        <div class="cart-item-info">
+          <p class="cart-item-title">{{ item.title }}</p>
+          <p class="cart-item-author">{{ item.author }}</p>
+        </div>
+
+        <p class="cart-item-price">${{ itemPrice(item.price, item.sale_price) }}</p>
+
+        <input type="number" min="1" class="cart-item-quantity" [value]="item.quantity"
+          (change)="onQuantityChange(item.id, $any($event.target).value)" />
+
+        <p class="cart-item-total">${{ (itemPrice(item.price, item.sale_price) * item.quantity).toFixed(2) }}</p>
+
+        <button type="button" class="cart-item-remove" (click)="removeItem(item.id)" aria-label="Remove item">
+          &times;
+        </button>
+      </div>
+      }
+    </div>
+
+    <div class="cart-summary">
+      <p class="cart-subtotal">Subtotal: ${{ cartService.subtotal().toFixed(2) }}</p>
+      <a routerLink="/checkout" class="checkout-btn">Proceed to Checkout</a>
+    </div>
+    }
+  </div>
+</div>

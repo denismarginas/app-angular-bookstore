@@ -1,0 +1,32 @@
+<footer class="site-footer section space-y-medium">
+  <div class="site-footer-inner container">
+    <nav class="footer-nav" aria-label="Footer">
+      <ul>
+        <li><a routerLink="/">Home</a></li>
+        <li><a routerLink="/books">Books</a></li>
+        <li><a routerLink="/contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <nav class="footer-account" aria-label="Account">
+      <ul>
+        <li><a routerLink="/account">Account</a></li>
+        <li><a routerLink="/cart">Cart</a></li>
+        <li><a routerLink="/search">Search</a></li>
+      </ul>
+    </nav>
+
+    <nav class="footer-pages" aria-label="Pages">
+      <ul>
+        @for (page of pages; track page.id) {
+        <li><a [routerLink]="['/page', page.slug]">{{ page.title }}</a></li>
+        }
+      </ul>
+    </nav>
+
+    <div class="footer-brand">
+      <img src="assets/img/logo/logo.webp" alt="BookStore" class="footer-logo" />
+      <p class="footer-copyright">Copyrights {{ currentYear }}</p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,19 @@
+.page-content {
+  white-space: pre-line;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #494949;
+}
+
+.page-not-found {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+.page-not-found a {
+  color: var(--bs-color-secondary);
+  font-weight: 600;
+}

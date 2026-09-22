@@ -1,0 +1,38 @@
+<div class="admin-list-header">
+  <h2>All Orders</h2>
+  <a routerLink="new" class="admin-add-link">Add New Order</a>
+</div>
+
+@if (errorMessage) {
+<p class="admin-error">{{ errorMessage }}</p>
+}
+
+@if (orders.length === 0) {
+<p>There are no orders yet.</p>
+} @else {
+<table class="orders-table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Order ID</th>
+      <th>Total</th>
+      <th>Status</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (order of orders; track order.order_id; let i = $index) {
+    <tr>
+      <td>{{ i + 1 }}</td>
+      <td>#{{ order.order_id }}</td>
+      <td>${{ order.order_total.toFixed(2) }}</td>
+      <td>{{ order.status }}</td>
+      <td class="admin-row-actions">
+        <a [routerLink]="['/order', order.order_id]">View</a>
+        <a [routerLink]="[order.order_id, 'edit']">Edit</a>
+      </td>
+    </tr>
+    }
+  </tbody>
+</table>
+}

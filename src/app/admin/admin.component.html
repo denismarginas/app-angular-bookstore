@@ -1,0 +1,16 @@
+<app-hero title="Admin Panel"></app-hero>
+
+<div class="section space-y-large">
+  <div class="account container">
+    <nav class="account-nav">
+      <a routerLink="orders" routerLinkActive="is-active">Orders</a>
+      <a routerLink="products" routerLinkActive="is-active">Products</a>
+      <a routerLink="users" routerLinkActive="is-active">Users</a>
+      <button type="button" (click)="logout()">Logout</button>
+    </nav>
+
+    <div class="account-content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

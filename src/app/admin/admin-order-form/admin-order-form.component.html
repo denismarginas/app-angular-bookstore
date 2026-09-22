@@ -1,0 +1,91 @@
+<h2>{{ isEdit ? 'Edit Order' : 'Add New Order' }}</h2>
+
+@if (errorMessage) {
+<p class="admin-error">{{ errorMessage }}</p>
+}
+
+<form class="admin-form" [formGroup]="form" (ngSubmit)="submit()">
+  <fieldset class="order-fields">
+    <legend>Order Details</legend>
+
+    <div class="field-row">
+      <label class="form-field">
+        <span class="form-field-label">Status</span>
+        <select formControlName="status">
+          @for (status of statuses; track status) {
+          <option [ngValue]="status">{{ status }}</option>
+          }
+        </select>
+      </label>
+
+      <label class="form-field">
+        <span class="form-field-label">Date</span>
+        <input type="date" formControlName="date" />
+      </label>
+    </div>
+  </fieldset>
+
+  <app-order-user-fields [formGroup]="$any(form.get('customer'))"></app-order-user-fields>
+  <app-order-address-fields [formGroup]="$any(form.get('address'))"></app-order-address-fields>
+
+  <fieldset class="order-fields">
+    <legend>Shipping Method</legend>
+    <select formControlName="shipping_method">
+      <option [ngValue]="''" disabled>Select shipping method</option>
+      @for (method of shippingMethods; track method.id) {
+      <option [ngValue]="method.id">{{ method.name }} (${{ method.price.toFixed(2) }})</option>
+      }
+    </select>
+  </fieldset>
+
+  <fieldset class="order-fields">
+    <legend>Payment Method</legend>
+    <select formControlName="payment_method">
+      <option [ngValue]="''" disabled>Select payment method</option>
+      @for (method of paymentMethods; track method.id) {
+      <option [ngValue]="method.id">{{ method.name }}</option>
+      }
+    </select>
+  </fieldset>
+
+  <fieldset class="order-fields">
+    <legend>Items</legend>
+
+    @for (item of items.controls; track item; let i = $index) {
+    <div class="field-row item-row" [formGroup]="$any(item)">
+      <label class="form-field">
+        <span class="form-field-label">Book</span>
+        <select formControlName="book_id">
+          <option [ngValue]="null" disabled>Select a book</option>
+          @for (book of books; track book.id) {
+          <option [ngValue]="book.id">{{ book.title }}</option>
+          }
+        </select>
+      </label>
+
+      <label class="form-field">
+        <span class="form-field-label">Quantity</span>
+        <input type="number" min="1" formControlName="quantity" />
+      </label>
+
+      <p class="item-line-total">${{ itemTotal(item).toFixed(2) }}</p>
+
+      <button type="button" class="remove-item" (click)="removeItem(i)">Remove</button>
+    </div>
+    }
+
+    <button type="button" class="add-item" (click)="addItem()">Add Item</button>
+  </fieldset>
+
+  <div class="order-total-row">
+    <p>Total</p>
+    <p>${{ orderTotal.toFixed(2) }}</p>
+  </div>
+
+  <div class="admin-form-actions">
+    <button type="submit" [disabled]="isSubmitting">
+      {{ isSubmitting ? 'Saving...' : 'Save Order' }}
+    </button>
+    <a routerLink="/admin/orders">Cancel</a>
+  </div>
+</form>

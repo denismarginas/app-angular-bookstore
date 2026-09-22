@@ -1,0 +1,26 @@
+<app-hero title="Register"></app-hero>
+
+<div class="section space-y-large">
+  <div class="auth container">
+    <form class="auth-form" [formGroup]="registerForm" (ngSubmit)="submit()">
+      <div class="field-row">
+        <app-form-field [group]="registerForm" name="first_name" label="First Name"></app-form-field>
+        <app-form-field [group]="registerForm" name="last_name" label="Last Name"></app-form-field>
+      </div>
+
+      <app-form-field [group]="registerForm" name="email" label="Email" type="email"></app-form-field>
+      <app-form-field [group]="registerForm" name="phone" label="Phone" type="tel"></app-form-field>
+      <app-form-field [group]="registerForm" name="password" label="Password" type="password"></app-form-field>
+
+      @if (errorMessage) {
+      <p class="auth-error">{{ errorMessage }}</p>
+      }
+
+      <button type="submit" [disabled]="isSubmitting">
+        {{ isSubmitting ? 'Creating account...' : 'Register' }}
+      </button>
+    </form>
+
+    <p class="auth-switch">Already have an account? <a routerLink="/login">Login</a></p>
+  </div>
+</div>

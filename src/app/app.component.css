@@ -1,0 +1,6 @@
+:host {
+  background-color: var(--bs-color-bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

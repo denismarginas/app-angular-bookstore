@@ -1,0 +1,22 @@
+<app-hero title="Search"></app-hero>
+
+<div class="section space-y-large">
+  <div class="search container">
+    <form class="search-form" (ngSubmit)="onSearch()">
+      <input type="text" name="query" placeholder="Search by title, author or description" [(ngModel)]="query" />
+      <button type="submit">Search</button>
+    </form>
+
+    @if (hasSearched) {
+    @if (results.length === 0) {
+    <p class="search-empty">No books found.</p>
+    } @else {
+    <div class="search-results">
+      @for (book of results; track book.id) {
+      <app-book-card [book]="book"></app-book-card>
+      }
+    </div>
+    }
+    }
+  </div>
+</div>

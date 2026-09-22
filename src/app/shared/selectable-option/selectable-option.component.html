@@ -1,0 +1,10 @@
+<label class="selectable-option" [class.is-selected]="control.value === value">
+  <input type="radio" [formControl]="control" [value]="value" />
+  <span class="selectable-option-body">
+    <span class="selectable-option-name">{{ name }}</span>
+    <span class="selectable-option-description">{{ description }}</span>
+  </span>
+  @if (price !== null) {
+  <span class="selectable-option-price">{{ price === 0 ? 'Free' : '$' + price.toFixed(2) }}</span>
+  }
+</label>

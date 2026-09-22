@@ -1,0 +1,20 @@
+<app-hero title="Login"></app-hero>
+
+<div class="section space-y-large">
+  <div class="auth container">
+    <form class="auth-form" [formGroup]="loginForm" (ngSubmit)="submit()">
+      <app-form-field [group]="loginForm" name="email" label="Email" type="email"></app-form-field>
+      <app-form-field [group]="loginForm" name="password" label="Password" type="password"></app-form-field>
+
+      @if (errorMessage) {
+      <p class="auth-error">{{ errorMessage }}</p>
+      }
+
+      <button type="submit" [disabled]="isSubmitting">
+        {{ isSubmitting ? 'Logging in...' : 'Login' }}
+      </button>
+    </form>
+
+    <p class="auth-switch">Don't have an account? <a routerLink="/register">Register</a></p>
+  </div>
+</div>

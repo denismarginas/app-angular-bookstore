@@ -1,0 +1,73 @@
+<app-hero title="Order"></app-hero>
+
+<div class="section space-y-large">
+  <div class="order container">
+  @if (order) {
+  <div class="order-confirmation">
+    <p class="order-status">Status: {{ order.status }}</p>
+    <h2>Thank you, {{ order.customer.first_name }}!</h2>
+    <p class="order-meta">Order #{{ order.order_id }} &middot; {{ order.date }}</p>
+
+    <div class="order-columns">
+      <div class="order-items">
+        <h3>Items</h3>
+        @for (item of order.items; track item.id) {
+        <div class="order-item">
+          <p>{{ item.title }} &times; {{ item.quantity }}</p>
+          <p>${{ item.total_price.toFixed(2) }}</p>
+        </div>
+        }
+        <div class="order-item">
+          <p>Shipping &middot; {{ order.shipping.name }}</p>
+          <p>${{ order.shipping.price.toFixed(2) }}</p>
+        </div>
+        <div class="order-total">
+          <p>Total</p>
+          <p>${{ order.order_total.toFixed(2) }}</p>
+        </div>
+      </div>
+
+      <div class="order-details">
+        <div>
+          <h3>Shipping To</h3>
+          <p>{{ order.customer.first_name }} {{ order.customer.last_name }}</p>
+          <p>{{ order.address.address_line }}</p>
+          <p>{{ order.address.city }}, {{ order.address.state }} {{ order.address.postal_code }}</p>
+          <p>{{ order.address.country }}</p>
+          <p>{{ order.customer.email }}</p>
+          <p>{{ order.customer.phone }}</p>
+        </div>
+
+        <div>
+          <h3>Payment</h3>
+          <p>{{ order.payment.name }}</p>
+        </div>
+
+        <div>
+          <h3>Sold By</h3>
+          <p>{{ order.store.name }}</p>
+          @if (order.store.address) {
+          <p>{{ order.store.address }}</p>
+          }
+          <p>CUI {{ order.store.cui }}</p>
+          <p>{{ order.store.email }}</p>
+          <p>{{ order.store.phone }}</p>
+        </div>
+      </div>
+    </div>
+
+    <a routerLink="/books">Continue Shopping</a>
+  </div>
+  } @else if (accessDenied) {
+  <div class="order-not-found">
+    <p>You don't have permission to view this order.</p>
+    <a routerLink="/account/orders">My Orders</a>
+  </div>
+  } @else if (notFound) {
+  <div class="order-not-found">
+    <p>We couldn't find that order.</p>
+    <a routerLink="/books">Browse Books</a>
+  </div>
+  }
+  </div>
+</div>

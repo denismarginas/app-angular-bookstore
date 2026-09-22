@@ -1,0 +1,32 @@
+<header class="site-header section space-y-small">
+  <div class="site-header-inner container">
+    <a href="#" class="logo">
+      <img src="assets/img/logo/logo.webp" alt="BookStore" />
+    </a>
+
+    <nav class="main-nav" [class.is-open]="isMenuOpen">
+      <ul>
+        <li><a routerLink="/">Home</a></li>
+        <li><a routerLink="/books">Books</a></li>
+        <li><a routerLink="/contact">Contact</a></li>
+        @if (authService.isAdmin()) {
+        <li><a routerLink="/admin">Admin</a></li>
+        }
+      </ul>
+    </nav>
+
+    <div class="header-icons">
+      <a routerLink="/account" class="icon-link" aria-label="Account">
+        <img src="assets/svg/account.svg" alt="" />
+      </a>
+      <a routerLink="/search" class="icon-link" aria-label="Search">
+        <img src="assets/svg/search.svg" alt="" />
+      </a>
+      <app-mini-cart></app-mini-cart>
+      <button type="button" class="icon-link menu-toggle" (click)="toggleMenu()" [attr.aria-expanded]="isMenuOpen"
+        aria-label="Toggle menu">
+        <img [src]="isMenuOpen ? 'assets/svg/close.svg' : 'assets/svg/menu.svg'" alt="" />
+      </button>
+    </div>
+  </div>
+</header>
