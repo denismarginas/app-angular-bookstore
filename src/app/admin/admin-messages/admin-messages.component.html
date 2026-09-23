@@ -17,6 +17,7 @@
       <p><strong>Phone:</strong> {{ message.phone || '-' }}</p>
       <p><strong>Order:</strong> {{ message.order_id || '-' }}</p>
       <p class="message-text">{{ message.message }}</p>
+      <button type="button" class="admin-delete-btn" (click)="deleteMessage(message)">Delete</button>
     </div>
   </details>
   }

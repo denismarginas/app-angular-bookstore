@@ -151,12 +151,17 @@ function mapContactMail(row) {
   };
 }
 
+function normalizeNewlines(value) {
+  if (!value) return value;
+  return value.replace(/\\r\\n/g, '\n').replace(/\\n/g, '\n');
+}
+
 function mapPage(row) {
   return {
     id: row.id,
     title: row.title,
     slug: row.slug,
-    content: row.content
+    content: normalizeNewlines(row.content)
   };
 }
 

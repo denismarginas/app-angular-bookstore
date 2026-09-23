@@ -30,6 +30,7 @@
       <td class="admin-row-actions">
         <a [routerLink]="['/order', order.order_id]">View</a>
         <a [routerLink]="[order.order_id, 'edit']">Edit</a>
+        <button type="button" class="admin-delete-btn" (click)="deleteOrder(order)">Delete</button>
       </td>
     </tr>
     }

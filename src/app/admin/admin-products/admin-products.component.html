@@ -29,6 +29,7 @@
       <td>{{ book.quantity }}</td>
       <td class="admin-row-actions">
         <a [routerLink]="[book.id, 'edit']">Edit</a>
+        <button type="button" class="admin-delete-btn" (click)="deleteBook(book)">Delete</button>
       </td>
     </tr>
     }

@@ -25,6 +25,9 @@
       <td>{{ user.email }}</td>
       <td class="admin-row-actions">
         <a [routerLink]="[user.id, 'edit']">Edit</a>
+        @if (!isCurrentUser(user)) {
+        <button type="button" class="admin-delete-btn" (click)="deleteUser(user)">Delete</button>
+        }
       </td>
     </tr>
     }

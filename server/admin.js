@@ -231,6 +231,30 @@ function registerAdminRoutes(app, db) {
     res.json(toPublicUser(user));
   }));
 
+  app.delete('/api/admin/users/:id', asyncHandler(async (req, res) => {
+    const admin = await requireAdmin(db, req, res);
+    if (!admin) return;
+
+    const targetId = Number(req.params.id);
+
+    if (targetId === admin.id) {
+      res.status(400).json({ message: 'You cannot delete your own account while logged in' });
+      return;
+    }
+
+    const users = await db.getUsers();
+    const user = users.find(candidate => candidate.id === targetId);
+
+    if (!user) {
+      res.status(404).json({ message: 'User not found' });
+      return;
+    }
+
+    await db.saveUsers(users.filter(candidate => candidate.id !== targetId));
+
+    res.status(204).end();
+  }));
+
   app.put('/api/admin/users/:id/role', asyncHandler(async (req, res) => {
     if (!(await requireAdmin(db, req, res))) return;
 
@@ -396,6 +420,22 @@ function registerAdminRoutes(app, db) {
     res.json(order);
   }));
 
+  app.delete('/api/admin/orders/:id', asyncHandler(async (req, res) => {
+    if (!(await requireAdmin(db, req, res))) return;
+
+    const orders = await db.getOrders();
+    const order = orders.find(candidate => candidate.order_id === Number(req.params.id));
+
+    if (!order) {
+      res.status(404).json({ message: 'Order not found' });
+      return;
+    }
+
+    await db.saveOrders(orders.filter(candidate => candidate.order_id !== order.order_id));
+
+    res.status(204).end();
+  }));
+
   app.post('/api/admin/books', asyncHandler(async (req, res) => {
     if (!(await requireAdmin(db, req, res))) return;
 
@@ -488,6 +528,22 @@ function registerAdminRoutes(app, db) {
     res.json(book);
   }));
 
+  app.delete('/api/admin/books/:id', asyncHandler(async (req, res) => {
+    if (!(await requireAdmin(db, req, res))) return;
+
+    const books = await db.getBooks();
+    const book = books.find(candidate => candidate.id === Number(req.params.id));
+
+    if (!book) {
+      res.status(404).json({ message: 'Book not found' });
+      return;
+    }
+
+    await db.saveBooks(books.filter(candidate => candidate.id !== book.id));
+
+    res.status(204).end();
+  }));
+
   app.get('/api/admin/contact-mails', asyncHandler(async (req, res) => {
     if (!(await requireAdmin(db, req, res))) return;
 
@@ -495,6 +551,22 @@ function registerAdminRoutes(app, db) {
     const sorted = [...mails].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
     res.json(sorted);
+  }));
+
+  app.delete('/api/admin/contact-mails/:id', asyncHandler(async (req, res) => {
+    if (!(await requireAdmin(db, req, res))) return;
+
+    const mails = await db.getContactMails();
+    const mail = mails.find(candidate => candidate.id === Number(req.params.id));
+
+    if (!mail) {
+      res.status(404).json({ message: 'Message not found' });
+      return;
+    }
+
+    await db.saveContactMails(mails.filter(candidate => candidate.id !== mail.id));
+
+    res.status(204).end();
   }));
 
   app.post('/api/admin/books/upload-image', asyncHandler(async (req, res) => {

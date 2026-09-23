@@ -67,6 +67,11 @@ export class AdminService {
     return this.http.put<User>(`/api/admin/users/${userId}/role`, { role, admin_id: adminId });
   }
 
+  deleteUser(userId: number, adminId: number): Observable<void> {
+    const params = new HttpParams().set('admin_id', adminId);
+    return this.http.delete<void>(`/api/admin/users/${userId}`, { params });
+  }
+
   createOrder(payload: AdminOrderPayload, adminId: number): Observable<Order> {
     return this.http.post<Order>('/api/admin/orders', { ...payload, admin_id: adminId });
   }
@@ -79,12 +84,22 @@ export class AdminService {
     return this.http.put<Order>(`/api/admin/orders/${orderId}/status`, { status, admin_id: adminId });
   }
 
+  deleteOrder(orderId: number, adminId: number): Observable<void> {
+    const params = new HttpParams().set('admin_id', adminId);
+    return this.http.delete<void>(`/api/admin/orders/${orderId}`, { params });
+  }
+
   createBook(payload: AdminBookPayload, adminId: number): Observable<Book> {
     return this.http.post<Book>('/api/admin/books', { ...payload, admin_id: adminId });
   }
 
   updateBook(bookId: number, payload: AdminBookPayload, adminId: number): Observable<Book> {
     return this.http.put<Book>(`/api/admin/books/${bookId}`, { ...payload, admin_id: adminId });
+  }
+
+  deleteBook(bookId: number, adminId: number): Observable<void> {
+    const params = new HttpParams().set('admin_id', adminId);
+    return this.http.delete<void>(`/api/admin/books/${bookId}`, { params });
   }
 
   uploadBookImage(filename: string, data: string, adminId: number): Observable<{ path: string }> {
@@ -98,5 +113,10 @@ export class AdminService {
   getContactMails(adminId: number): Observable<ContactMessage[]> {
     const params = new HttpParams().set('admin_id', adminId);
     return this.http.get<ContactMessage[]>('/api/admin/contact-mails', { params });
+  }
+
+  deleteContactMail(mailId: number, adminId: number): Observable<void> {
+    const params = new HttpParams().set('admin_id', adminId);
+    return this.http.delete<void>(`/api/admin/contact-mails/${mailId}`, { params });
   }
 }
