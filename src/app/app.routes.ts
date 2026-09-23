@@ -29,6 +29,7 @@ import { adminGuard } from './admin/admin.guard';
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'books', component: BooksComponent },
+  { path: 'books/pagination/:page', component: BooksComponent },
   { path: 'books/:idOrSlug', component: BookSingleProductComponent },
   { path: 'search', component: SearchComponent },
   { path: 'contact', component: ContactComponent },

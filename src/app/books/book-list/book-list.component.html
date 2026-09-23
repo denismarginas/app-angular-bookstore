@@ -3,3 +3,31 @@
   <app-book-card [book]="book"></app-book-card>
   }
 </div>
+
+@if (pagination && totalPages > 1) {
+<div class="pagination container">
+  <button type="button" class="pagination-btn" [disabled]="currentPage === 1" (click)="goToPage(currentPage - 1)">
+    Prev
+  </button>
+
+  @for (page of pageNumbers; track page) {
+  <button
+    type="button"
+    class="pagination-btn pagination-page"
+    [class.is-active]="page === currentPage"
+    (click)="goToPage(page)"
+  >
+    {{ page }}
+  </button>
+  }
+
+  <button
+    type="button"
+    class="pagination-btn"
+    [disabled]="currentPage === totalPages"
+    (click)="goToPage(currentPage + 1)"
+  >
+    Next
+  </button>
+</div>
+}
