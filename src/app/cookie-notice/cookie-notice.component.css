@@ -1,0 +1,32 @@
+.cookie-notice {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 16px 24px;
+  background-color: var(--bs-color-primary);
+  color: var(--bs-color-highlight-primary);
+}
+
+.cookie-notice-text {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  max-width: 720px;
+}
+
+.cookie-notice-text a {
+  color: inherit;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.cookie-notice-accept {
+  flex-shrink: 0;
+}
